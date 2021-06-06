@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Summarative_Project.Views.AddQuestion">
+    <ContentPage.Content>
+        <StackLayout Margin="10" Padding="5">
+            <Label Text="Add A Question" HorizontalOptions="Center" VerticalOptions="Start" FontSize="40" />
+            <Label  Text="Question:" VerticalOptions="Start" HorizontalOptions="Start" FontSize="20"/>
+            <Entry Placeholder="Enter Question Body Here..." Text="{Binding QText}" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="1500" />
+            <Label Text="Correct Answer:" VerticalOptions="Start" HorizontalOptions="Start" TextColor="LightGreen" FontSize="20" />
+            <Entry Placeholder="Enter Answer Here..." Text="{Binding CorrectAnswer}" HorizontalOptions="Start" VerticalOptions="Start" WidthRequest="1500" />
+            <Label Text="Other Options:" VerticalOptions="Start" HorizontalOptions="StartAndExpand" FontSize="20"/>
+            <Entry Placeholder="Option 1"  Text="{Binding Other1}" HorizontalOptions="StartAndExpand" VerticalOptions="Start" WidthRequest="1500" />
+            <Entry Placeholder="Option 2" Text="{Binding Other2}" HorizontalOptions="StartAndExpand" VerticalOptions="Start" WidthRequest="1500" />
+            <Entry Placeholder="Option 3" Text="{Binding Other3}" HorizontalOptions="StartAndExpand" VerticalOptions="Start" WidthRequest="1500" />
+            <Label Text="{Binding Message}" TextColor="Blue"/>
+            <Button Text="Add Question" Command="{Binding AddCommand}" HorizontalOptions="Center" VerticalOptions="End" IsEnabled="{Binding IsEnabled}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

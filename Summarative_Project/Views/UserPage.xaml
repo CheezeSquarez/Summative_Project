@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Summarative_Project.Views.UserPage">
+    <ContentPage.Content>
+        <StackLayout Margin="5,10" Padding="10,5">
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="Center" FontSize="40">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Hello " />
+                        <Span Text="{Binding Name}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Name: " />
+                        <Span Text="{Binding Name}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Email: " />
+                        <Span Text="{Binding Email}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <Label VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="20">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Password: " />
+                        <Span Text="{Binding Password}" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label Text="Your Questions" TextColor="DarkGray" HorizontalOptions="Center" FontSize="40"/>
+            <CollectionView ItemsSource="{Binding Questions}" x:Name="QuestionsView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            
+                            <SwipeView.LeftItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Pink" IconImageSource="Delete.png" Command="{Binding Source={x:Reference QuestionsView}, Path=BindingContext.DeleteCommand}" CommandParameter="{Binding}"/>
+                                <SwipeItem Text="Edit" BackgroundColor="LightBlue" IconImageSource="Edit.png" Command="{Binding Source={x:Reference QuestionsView}, Path=BindingContext.EditCommand}" CommandParameter="{Binding}"/>
+                            </SwipeView.LeftItems>
+                            <Grid Padding="10" BackgroundColor="GhostWhite">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Grid.Row="0" TextColor="Black"
+                                Text="{Binding QText}" />
+                                <Label Grid.Column="0" Grid.Row="1" TextColor="Green"
+                                Text="{Binding CorrectAnswer}" />
+                            </Grid>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

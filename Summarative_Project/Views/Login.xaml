@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Summarative_Project.Views.Login">
+    
+    <ContentPage.Content>
+        
+        <StackLayout Margin="5" Padding="5"  >
+            <Label Text="{Binding Error}" HorizontalOptions="CenterAndExpand"></Label>
+            <Label Text="Email:" FontSize="Large"/>
+            <Entry Text="{Binding Username}" Placeholder="Enter Username Here..." HorizontalOptions="FillAndExpand" />
+            <Label Text="Password:" FontSize="Large"/>
+            <Entry Text="{Binding Password}" IsPassword="True" Placeholder="Enter Username Here..." HorizontalOptions="FillAndExpand" WidthRequest="200"/>
+            <Button WidthRequest="150" HeightRequest="70" Text="Login" HorizontalOptions="CenterAndExpand" BackgroundColor="#7befb2" Command="{Binding Login}" />
+            <Label VerticalOptions="EndAndExpand" HorizontalOptions="Center" FontSize="22" FontFamily="normal">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Dont have an Account? " />
+                        <Span Text="Sign Up!"
+                        TextColor="Blue"
+                        TextDecorations="Underline">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}" />
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

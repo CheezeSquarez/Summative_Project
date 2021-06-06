@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Summarative_Project.Views.HomePage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <StackLayout Margin="5" Padding="5" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Label Text="Welcome to The Best Triva Game" FontSize="48" HorizontalTextAlignment="Center" VerticalOptions="StartAndExpand" HorizontalOptions="CenterAndExpand" />
+            <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True" HorizontalOptions="Center" VerticalOptions="Center">
+                <Image Source="QuizTime.jpg" HorizontalOptions="Center" VerticalOptions="Center" WidthRequest="300"></Image>
+            </Frame>
+            <Button Text="Login" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" FontSize="Medium"  Clicked="Login_Clicked" BackgroundColor="#bfbfbf" TextColor="White" x:Name="LoginBtn"/>
+            <Button Text="Trivia" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" FontSize="Medium" Clicked="Trivia_Clicked" BackgroundColor="#bfbfbf" TextColor="White"/>
+            <Button Text="User Info" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" FontSize="Medium" Clicked="UserInfo_Clicked" BackgroundColor="#bfbfbf" TextColor="White" x:Name="UserBtn"/>
+            <Button Text="Sign Out" HorizontalOptions="CenterAndExpand" VerticalOptions="EndAndExpand" FontSize="Medium" Clicked="SignOut_Clicked" BackgroundColor="#bfbfbf" TextColor="White" x:Name="SignOutBtn"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

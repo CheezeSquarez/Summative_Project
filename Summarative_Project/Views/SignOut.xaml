@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Summarative_Project.Views.SignOut">
+    <ContentPage.Content>
+        <StackLayout Padding="10" Margin="5">
+            <Label HorizontalTextAlignment="Center" Text="Are you sure you want to sign out?" FontSize="30" HorizontalOptions="CenterAndExpand" VerticalOptions="StartAndExpand" />
+            <Grid HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Margin="0,0,0,150">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <Button Clicked="Yes_Clicked" Grid.Row="0" Grid.Column="0" HorizontalOptions="CenterAndExpand" HeightRequest="75" WidthRequest="150" VerticalOptions="CenterAndExpand" Text="Yes" />
+                <Button Clicked="No_Clicked" Grid.Row="0" Grid.Column="1" HorizontalOptions="CenterAndExpand" HeightRequest="75" WidthRequest="150" VerticalOptions="CenterAndExpand" Text="No" />
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

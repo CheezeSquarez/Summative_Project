@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Summarative_Project.Views.TriviaPage"
+             xmlns:viewModels="clr-namespace:Summarative_Project.ViewModels">
+    <ContentPage.Content>
+        <StackLayout Margin="2,5" Padding="10, 5">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                    <Label VerticalOptions="Start" Grid.Column="0" HorizontalOptions="Start" FontSize="15" FontFamily="normal">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Current Streak: " />
+                                <Span Text="{Binding Streak}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label VerticalOptions="Start" Grid.Column="1" HorizontalOptions="End" FontSize="15" FontFamily="normal">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Current Score: " />
+                                <Span Text="{Binding Score}" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </Grid>
+                <Frame HorizontalOptions="FillAndExpand" BackgroundColor="{Binding Color}" HeightRequest="100" CornerRadius="20" Grid.Row="1">
+                    <Label Text="{Binding QText}" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" />
+                </Frame>
+                <Label VerticalOptions="Start" HorizontalOptions="Center" FontSize="22" FontFamily="normal" Grid.Row="2">
+                    <Label.FormattedText>
+                        <FormattedString>
+                            <Span Text="Submitted By: " />
+                            <Span Text="{Binding Submittor}" />
+                        </FormattedString>
+                    </Label.FormattedText>
+                </Label>
+                <CollectionView ItemsSource="{Binding Answers}" x:Name="collectionView" Grid.Row="3" HeightRequest="300">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Button Text="{Binding}" Command="{Binding Source={x:Reference collectionView}, Path=BindingContext.CheckAnswer}" CommandParameter="{Binding}" HeightRequest="75" WidthRequest="1500" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Grid Grid.Row="4">
+                    <Button Text="Add Questions" Clicked="AddQuestion_Clicked" Grid.Column="0" IsEnabled="{Binding CanAddQuestion}"/>
+                    <Button Text="Skip Question (-1 pts)" Command="{Binding SkipCommand}" Grid.Column="1"  IsEnabled="{Binding CanSkip}"/>
+                </Grid>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
